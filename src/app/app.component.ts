@@ -1,35 +1,28 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+
+import { Ng4FilesService } from './ng4-files/services';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.sass']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
 
   public ng4FilesConfig = {
     maxFilesCount: 1
   };
-  
+
   public files: FileList;
-  
-  public set maxFilesCount(value: string) {
-    this.createNg4FilesConfig('maxFilesCount', +value);
-  };
 
-  public get maxFilesCount(): string {
-    return this.ng4FilesConfig.maxFilesCount.toString();
-  };
-  
-  private createNg4FilesConfig(property: string, value: any): void {
-    this.ng4FilesConfig = {
-      maxFilesCount: 1
-    };
+  constructor(private ng4FilesService: Ng4FilesService) {
+  }
 
-    this.ng4FilesConfig[property] = value;
-  };
-  
-  public onUploadSuccess(files: FileList):void {
+  ngOnInit() {
+      this.ng4FilesService.init(this.ng4FilesConfig);
+  }
+
+  public onUploadSuccess(files: FileList): void {
     this.files = files;
     console.log(files);
   }
