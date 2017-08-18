@@ -4,7 +4,7 @@
 <input type="file"
        [multiple]="config.maxFilesCount > 1"
        #spng4FilesInputSpy
-       accept="image/*"
+       accept="{{acceptedExtensions}}"
        (change)="onChange(spng4FilesInputSpy.files)"
        class="ng4-files-input">
 </label>
