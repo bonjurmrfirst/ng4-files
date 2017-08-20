@@ -1,4 +1,16 @@
-<ng4-files-button (uploadSuccess)="onUploadSuccess($event)"
+<ng4-files-click (filesSelect)="filesSelect($event)">
+  <span>Upload</span>
+</ng4-files-click>
+
+<hr />
+
+<ng4-files-drop (filesSelect)="filesSelect($event)">
+  <div style="height: 100px; width: 100px; background-color: gray">
+    {{selectedFiles}}
+  </div>
+</ng4-files-drop>
+
+<!--ng4-files-button (uploadSuccess)="onUploadSuccess($event)"
                   [caption]="'Click to add/Edit documents'"
                   [addClass]="'ng4-upload-btn'">
 </ng4-files-button>
@@ -20,4 +32,4 @@
   <li *ngFor="let file of files">
     {{file.name}}
   </li>
-</ul>
+</ul-->
