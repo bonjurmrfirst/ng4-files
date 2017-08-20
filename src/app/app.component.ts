@@ -1,6 +1,11 @@
 import {Component, OnInit} from '@angular/core';
 
-import {Ng4FilesService} from './ng4-files/services';
+import {
+  Ng4FilesService,
+  Ng4FilesConfig,
+  Ng4FilesStatus,
+  Ng4FilesSelected
+} from './ng4-files';
 
 @Component({
     selector: 'app-root',
@@ -9,25 +14,30 @@ import {Ng4FilesService} from './ng4-files/services';
 })
 export class AppComponent implements OnInit {
 
-    public ng4FilesConfig = {
-        acceptedExtensions: ['*'],
-        maxFilesCount: 1,
-        maxFileSize: 512000,
-        maxTotalSize: 1012000
-    };
+  public selectedFiles;
 
-    public files: FileList;
+  private demoConfig: Ng4FilesConfig = {
+    acceptExtensions: ['jpg', 'doc', 'js'],
+    maxFilesCount: 5,
+    maxFileSize: 512000,
+    totalFilesSize: 1012000
+  };
 
-    constructor(private ng4FilesService: Ng4FilesService) {
+  constructor(
+      private ng4FilesService: Ng4FilesService
+  ) {}
+
+  ngOnInit() {
+    this.ng4FilesService.init(this.demoConfig);
+  }
+
+  public filesSelect(selectedFiles: Ng4FilesSelected): void {
+    if (selectedFiles.status !== Ng4FilesStatus.STATUS_SUCCESS) {
+      this.selectedFiles = selectedFiles.status;
+      return;
     }
 
-    ngOnInit() {
-        this.ng4FilesService.init(this.ng4FilesConfig);
-    }
-
-    public onUploadSuccess(files: FileList): void {
-        this.files = files;
-        console.log(files);
-    }
+    this.selectedFiles = Array.from(selectedFiles.files).map(file => file.name);
+  }
 
 }

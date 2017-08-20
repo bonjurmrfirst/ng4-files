@@ -1,23 +1,11 @@
-<ng4-files-button (uploadSuccess)="onUploadSuccess($event)"
-                  [caption]="'Click to add/Edit documents'"
-                  [addClass]="'ng4-upload-btn'">
-</ng4-files-button>
+<ng4-files-click (filesSelect)="filesSelect($event)">
+  <span>Upload</span>
+</ng4-files-click>
 
 <hr />
 
-<label>
-    Files max count
-    <input type="number" [(ngModel)]="ng4FilesConfig.maxFilesCount" min="1"/>
-</label>
-
-<br>
-
-<p>Accepted extensions: {{ng4FilesConfig.acceptedExtensions}}</p>
-
-<br>
-
-<ul *ngIf="files">
-  <li *ngFor="let file of files">
-    {{file.name}}
-  </li>
-</ul>
+<ng4-files-drop (filesSelect)="filesSelect($event)">
+  <div style="display: inline-block; height: 100px; width: 100px; background-color: gray">
+    {{selectedFiles}}
+  </div>
+</ng4-files-drop>

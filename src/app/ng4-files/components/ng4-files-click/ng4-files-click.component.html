@@ -1,0 +1,9 @@
+<label>
+  <ng-content></ng-content>
+  <input type="file"
+  class="ng4-files-upload-btn"
+  [multiple]="maxFilesCount > 1"
+  #spyNg4FilesInputSpy
+  accept="{{acceptExtensions}}"
+  (change)="onChange(spyNg4FilesInputSpy.files)"/>
+</label>
