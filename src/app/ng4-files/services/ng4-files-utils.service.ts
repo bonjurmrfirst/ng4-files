@@ -15,12 +15,13 @@ export class Ng4FilesUtilsService {
     private ng4FilesService: Ng4FilesService
   ) {}
 
-  public verifyFiles(files: FileList, verifyExtensions = false): Ng4FilesSelected {
+  public verifyFiles(files: FileList, verifyExtensions = false, configId = 'shared'): Ng4FilesSelected {
     const filesArray = Array.from(files);
 
-    const maxFilesCount = this.ng4FilesService.maxFilesCount;
-    const totalFilesSize = this.ng4FilesService.totalFilesSize;
-    const acceptExtensions = this.ng4FilesService.acceptExtensions;
+    const config = this.ng4FilesService.getConfig(configId);
+    const maxFilesCount = config.maxFilesCount;
+    const totalFilesSize = config.totalFilesSize;
+    const acceptExtensions = config.acceptExtensions;
 
     if (filesArray.length > maxFilesCount) {
       return <Ng4FilesSelected> {
@@ -29,7 +30,7 @@ export class Ng4FilesUtilsService {
       };
     }
 
-    const filesWithExceedSize = filesArray.filter((file: File) => file.size > this.ng4FilesService.maxFileSize);
+    const filesWithExceedSize = filesArray.filter((file: File) => file.size > config.maxFileSize);
     if (filesWithExceedSize.length) {
       return <Ng4FilesSelected> {
         status: Ng4FilesStatus.STATUS_MAX_FILE_SIZE_EXCEED,
@@ -49,7 +50,7 @@ export class Ng4FilesUtilsService {
     if (verifyExtensions) { // todo: trow when init config if extension is empty
       const filesNotMatchExtensions = filesArray.filter((file: File) => {
         const fileName = file.name.toLowerCase();
-        const extensionsList = acceptExtensions
+        const extensionsList = (acceptExtensions as string)
           .split(', ')
           .map(extension => extension.slice(1))
           .join('|');

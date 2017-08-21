@@ -27,7 +27,7 @@ export class AppComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.ng4FilesService.init(this.demoConfig);
+    this.ng4FilesService.addConfig(this.demoConfig);
   }
 
   public filesSelect(selectedFiles: Ng4FilesSelected): void {

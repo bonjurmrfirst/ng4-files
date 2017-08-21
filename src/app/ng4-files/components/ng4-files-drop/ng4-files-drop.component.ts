@@ -1,6 +1,7 @@
 import {
   Component,
   DoCheck,
+  Input,
   Output,
   EventEmitter,
   ChangeDetectionStrategy,
@@ -21,6 +22,8 @@ import { Ng4FilesSelected } from '../../declarations';
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class Ng4FilesDropComponent implements DoCheck {
+
+  @Input() private configId = 'shared';
 
   @Output() filesSelect: EventEmitter<Ng4FilesSelected> = new EventEmitter<Ng4FilesSelected>();
 
@@ -56,7 +59,7 @@ export class Ng4FilesDropComponent implements DoCheck {
 
   private dropFilesHandler(files: FileList) {
     this.filesSelect.emit(
-      this.ng4FilesUtilsService.verifyFiles(files, true)
+      this.ng4FilesUtilsService.verifyFiles(files, true, this.configId)
     );
   }
 

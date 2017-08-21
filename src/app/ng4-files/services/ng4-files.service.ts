@@ -8,9 +8,9 @@ import {
 @Injectable()
 export class Ng4FilesService {
 
-  private config;
+  private config: { [key: string]: Ng4FilesConfig } = {};
 
-  public init(config: Ng4FilesConfig): void {
+  public addConfig(config: Ng4FilesConfig, configId = 'shared'): void {
     this.setDefaultProperties(config);
 
     if (config.maxFilesCount < 1) {
@@ -35,23 +35,11 @@ export class Ng4FilesService {
           .map(extension => '.' + extension.toLowerCase()).join(', ');
     }
 
-    this.config = config;
+    this.config[configId] = config;
   }
 
-  public get maxFilesCount(): number {
-    return this.config.maxFilesCount;
-  }
-
-  public get maxFileSize(): number {
-    return this.config.maxFileSize;
-  }
-
-  public get totalFilesSize(): number {
-    return this.config.totalFilesSize;
-  }
-
-  public get acceptExtensions(): string {
-    return this.config.acceptExtensions;
+  public getConfig(configId = 'shared'): Ng4FilesConfig {
+    return this.config[configId];
   }
 
   private setDefaultProperties(config: Ng4FilesConfig): void {
