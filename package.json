@@ -1,6 +1,6 @@
 {
     "name": "angular4-files-upload",
-    "version": "1.0.0-beta.1",
+    "version": "1.0.0-beta.2",
     "description": "Angular4 files upload by click or/and drag and drop",
     "keywords": [
         "Angular4",
@@ -59,7 +59,6 @@
         "karma-coverage-istanbul-reporter": "^1.2.1",
         "karma-jasmine": "~1.1.0",
         "karma-jasmine-html-reporter": "^0.2.2",
-        "node-sass": "^4.5.3",
         "protractor": "~5.1.2",
         "ts-node": "~3.2.0",
         "tslint": "~5.3.2",

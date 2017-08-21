@@ -19,7 +19,7 @@
       "tsconfig": "tsconfig.app.json",
       "testTsconfig": "tsconfig.spec.json",
       "styles": [
-        "styles.scss"
+        "styles.less"
       ],
       "scripts": [],
       "environmentSource": "environments/environment.ts",
@@ -54,7 +54,7 @@
     }
   },
   "defaults": {
-    "styleExt": "scss",
+    "styleExt": "less",
     "component": {},
     "poll": 500
   }
