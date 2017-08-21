@@ -50,6 +50,12 @@ export class Ng4FilesService {
       this.setDefaultProperties(this.config['shared']);
     }
 
+    if (!this.config[configId]) {
+      throw new SyntaxError(
+        `ng4Files: Config '${configId}' is not found`
+      );
+    }
+
     return this.config[configId];
   }
 
