@@ -18,7 +18,7 @@ import { Ng4FilesSelected } from '../../declarations/ng4-files-selected';
 @Component({
     selector: 'ng4-files-click',
     templateUrl: './ng4-files-click.component.html',
-    styleUrls: ['./ng4-files-click.component.sass'],
+    styleUrls: ['./ng4-files-click.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class Ng4FilesClickComponent implements OnInit, DoCheck {
