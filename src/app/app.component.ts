@@ -15,8 +15,23 @@ export class AppComponent implements OnInit {
 
   public selectedFiles;
 
-  private demoConfig: Ng4FilesConfig = {
-    acceptExtensions: ['jpg', 'doc', 'js'],
+  private testConfig0: Ng4FilesConfig = {};
+
+  private testConfig1: Ng4FilesConfig = {
+    acceptExtensions: '*'
+  };
+
+  private testConfig2: Ng4FilesConfig = {
+    acceptExtensions: ['txt', 'jpg']
+  };
+
+  private testConfig3: Ng4FilesConfig = {
+    acceptExtensions: ['jpg'],
+    maxFilesCount: 5
+  };
+
+  private testConfig4: Ng4FilesConfig = {
+    acceptExtensions: ['js', 'doc', 'mp4'],
     maxFilesCount: 5,
     maxFileSize: 512000,
     totalFilesSize: 1012000
@@ -27,7 +42,8 @@ export class AppComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.ng4FilesService.addConfig(this.demoConfig);
+    this.ng4FilesService.addConfig(this.testConfig3);
+    this.ng4FilesService.addConfig(this.testConfig4, 't');
   }
 
   public filesSelect(selectedFiles: Ng4FilesSelected): void {

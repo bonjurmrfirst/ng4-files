@@ -11,6 +11,12 @@ export class Ng4FilesService {
   private config: { [key: string]: Ng4FilesConfig } = {};
 
   public addConfig(config: Ng4FilesConfig, configId = 'shared'): void {
+    if (Object.values(this.config).indexOf(config) !== -1) {
+      throw new Error(
+        `ng4Files: Avoid adding config '${configId}' more than once`
+      );
+    }
+
     this.setDefaultProperties(config);
 
     if (config.maxFilesCount < 1) {
@@ -39,6 +45,11 @@ export class Ng4FilesService {
   }
 
   public getConfig(configId = 'shared'): Ng4FilesConfig {
+    if (configId === 'shared' && !this.config['shared']) {
+      this.config['shared'] = <Ng4FilesConfig>{};
+      this.setDefaultProperties(this.config['shared']);
+    }
+
     return this.config[configId];
   }
 

@@ -1,5 +1,5 @@
 export interface Ng4FilesConfig {
-  acceptExtensions: string[] | string;
+  acceptExtensions?: string[] | string;
   maxFilesCount?: number;
   maxFileSize?: number;
   totalFilesSize?: number;
