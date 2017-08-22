@@ -215,7 +215,7 @@ Pass your named config with configId
 <br><br>
 <br><br>
 !!!
-Please don't use button as template inside <br>
+Please don't use button as template inside ng4-files-click<br>
 Don't: ```
 <ng4-files-click>
     <button></button>
