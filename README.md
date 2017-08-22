@@ -191,7 +191,7 @@ values: [number] (bytes)
 <ng4-files-click _(filesSelect)_="YOUR_HANDLER($event)" _[configId]_="YOUR_CONFIG">
 
 _filesSelect_<br> 
-emit when files attached and pass Ng4FilesStatus to YOUR_HANDLER:
+emit when files attached and pass Ng4FilesSelected object to YOUR_HANDLER:
 
 ```
 enum Ng4FilesStatus {
