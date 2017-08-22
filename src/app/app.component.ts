@@ -43,7 +43,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.ng4FilesService.addConfig(this.testConfig3);
-    this.ng4FilesService.addConfig(this.testConfig4, 't');
+    this.ng4FilesService.addConfig(this.testConfig4, 'another-config');
   }
 
   public filesSelect(selectedFiles: Ng4FilesSelected): void {

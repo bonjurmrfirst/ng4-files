@@ -17,9 +17,9 @@ import {
 import { Ng4FilesSelected } from '../../declarations/ng4-files-selected';
 
 @Component({
-    selector: 'ng4-files-click',
+    selector: 'ng4-files-click', // tslint:disable-line
     templateUrl: './ng4-files-click.component.html',
-    styleUrls: ['./ng4-files-click.component.css'],
+    styles: ['.ng4-files-upload-btn { display: none; }'],
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class Ng4FilesClickComponent implements OnInit, DoCheck {
@@ -50,7 +50,7 @@ export class Ng4FilesClickComponent implements OnInit, DoCheck {
 
   public onChange(files: FileList): void {
     this.filesSelect.emit(
-      this.ng4FilesUtilsService.verifyFiles(files, false, this.configId)
+      this.ng4FilesUtilsService.verifyFiles(files, this.configId)
     );
   }
 
