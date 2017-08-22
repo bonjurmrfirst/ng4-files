@@ -17,7 +17,7 @@ import {
 import { Ng4FilesSelected } from '../../declarations';
 
 @Component({
-    selector: 'ng4-files-drop',
+    selector: 'ng4-files-drop', // tslint:disable-line
     templateUrl: './ng4-files-drop.component.html',
     changeDetection: ChangeDetectionStrategy.OnPush
 })
@@ -59,7 +59,7 @@ export class Ng4FilesDropComponent implements DoCheck {
 
   private dropFilesHandler(files: FileList) {
     this.filesSelect.emit(
-      this.ng4FilesUtilsService.verifyFiles(files, true, this.configId)
+      this.ng4FilesUtilsService.verifyFiles(files, this.configId)
     );
   }
 

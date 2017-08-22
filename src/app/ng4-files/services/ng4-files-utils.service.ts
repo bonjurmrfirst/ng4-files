@@ -15,7 +15,7 @@ export class Ng4FilesUtilsService {
     private ng4FilesService: Ng4FilesService
   ) {}
 
-  public verifyFiles(files: FileList, verifyExtensions = false, configId = 'shared'): Ng4FilesSelected {
+  public verifyFiles(files: FileList, configId = 'shared'): Ng4FilesSelected {
     const filesArray = Array.from(files);
 
     const config = this.ng4FilesService.getConfig(configId);
@@ -47,7 +47,6 @@ export class Ng4FilesUtilsService {
       };
     }
 
-    if (verifyExtensions) { // todo: trow when init config if extension is empty
       const filesNotMatchExtensions = filesArray.filter((file: File) => {
         const fileName = file.name.toLowerCase();
         const extensionsList = (acceptExtensions as string)
@@ -66,7 +65,7 @@ export class Ng4FilesUtilsService {
           files: filesNotMatchExtensions
         };
       }
-    }
+
 
     return <Ng4FilesSelected> {
       status: Ng4FilesStatus.STATUS_SUCCESS,
