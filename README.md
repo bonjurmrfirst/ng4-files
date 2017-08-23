@@ -1,4 +1,3 @@
-# UNSTABLE/DEVELOPMENT
 # angular4-files-upload
 
 Upload files by clicking or dragging
@@ -214,7 +213,7 @@ _configId_<br>
 Pass your named config with configId
 <br>
 
-##Caveat
+## Caveat
 Please don't use button tag in template inside ng4-files-click<br>
 Don't: ```html
 <ng4-files-click>
