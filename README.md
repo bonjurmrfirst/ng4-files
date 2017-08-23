@@ -58,6 +58,8 @@ public filesSelect(selectedFiles: Ng4FilesSelected): void {
     if (selectedFiles.status !== Ng4FilesStatus.STATUS_SUCCESS) {
       this.selectedFiles = selectedFiles.status;
       return;
+      
+      // Hnadle error statuses here
     }
 
     this.selectedFiles = Array.from(selectedFiles.files).map(file => file.name);
