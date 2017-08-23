@@ -194,7 +194,7 @@ _filesSelect_<br>
 emit when files attached and pass Ng4FilesSelected object to YOUR_HANDLER:
 
 ```
-enum Ng4FilesStatus {
+export enum Ng4FilesStatus {
     STATUS_SUCCESS,
     STATUS_MAX_FILES_COUNT_EXCEED,
     STATUS_MAX_FILE_SIZE_EXCEED,
@@ -212,11 +212,18 @@ _! Note on statuses STATUS_MAX_FILE_SIZE_EXCEED or STATUS_NOT_MATCH_EXTENSIONS y
 
 _configId_<br>
 Pass your named config with configId
-<br><br>
+<br>
 
-
-! Please don't use button tag in template inside ng4-files-click<br>
-Don't: ```
+###Caveat
+Please don't use button tag in template inside ng4-files-click<br>
+Don't: ```html
 <ng4-files-click>
     <button></button>
 </ng4-files-click>```
+<br><br>
+ng4-files-click content is wrapped in label tag, so prefer something like
+````html
+<ng4-files-click>
+    <span role="button" style="btn">Give me file ^.^</button>
+</ng4-files-click>```
+````
