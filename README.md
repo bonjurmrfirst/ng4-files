@@ -213,9 +213,9 @@ _! Note on statuses STATUS_MAX_FILE_SIZE_EXCEED or STATUS_NOT_MATCH_EXTENSIONS y
 _configId_<br>
 Pass your named config with configId
 <br><br>
-<br><br>
-!!!
-Please don't use button as template inside ng4-files-click<br>
+
+
+! Please don't use button tag in template inside ng4-files-click<br>
 Don't: ```
 <ng4-files-click>
     <button></button>
