@@ -10,4 +10,4 @@ export const ng4FilesConfigDefault: Ng4FilesConfig = {
   maxFilesCount: Infinity,
   maxFileSize: Infinity,
   totalFilesSize: Infinity
-}; 
+};

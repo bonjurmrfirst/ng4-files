@@ -5,5 +5,5 @@
   [multiple]="maxFilesCount > 1"
   #spyNg4FilesInputSpy
   accept="{{acceptExtensions}}"
-  (change)="onChange(spyNg4FilesInputSpy.files)"/>
+  (change)="onChange(spyNg4FilesInputSpy.files); spyNg4FilesInputSpy.value=''" />
 </label>
