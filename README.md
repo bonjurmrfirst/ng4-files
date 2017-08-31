@@ -1,5 +1,4 @@
 [![Build Status](https://travis-ci.org/bonjurmrfirst/ng4-files.svg?branch=master)](https://travis-ci.org/bonjurmrfirst/ng4-files)
-[![codecov](https://codecov.io/gh/vreshch/optimize-css-classnames-plugin/branch/master/graph/badge.svg)](https://codecov.io/gh/vreshch/optimize-css-classnames-plugin)
 
 # angular4-files-upload
 
