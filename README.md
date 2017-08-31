@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/bonjurmrfirst/ng4-files.svg?branch=master)](https://travis-ci.org/bonjurmrfirst/ng4-files)
+
 # angular4-files-upload
 
 Upload files by clicking or dragging
