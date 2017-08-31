@@ -26,6 +26,7 @@
         "build": "ng build",
         "build:prod": "ng build --prod",
         "test:node": "jasmine-ts JASMINE_CONFIG_PATH=./jasmine.tdd.json --fast=true",
+        "test": "nodemon -e ts -w ./src -x jasmine-ts JASMINE_CONFIG_PATH=./jasmine.tdd.json  --fast=true",
         "tdd": "nodemon -e ts -w ./src -x jasmine-ts JASMINE_CONFIG_PATH=./jasmine.tdd.json  --fast=true",
         "lint": "ng lint",
         "e2e": "ng e2e",
