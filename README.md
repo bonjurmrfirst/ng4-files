@@ -1,3 +1,4 @@
+[![npm version](https://badge.fury.io/js/angular4-files-upload.svg)](https://badge.fury.io/js/angular4-files-upload)
 [![Build Status](https://travis-ci.org/bonjurmrfirst/ng4-files.svg?branch=master)](https://travis-ci.org/bonjurmrfirst/ng4-files)
 
 # angular4-files-upload
