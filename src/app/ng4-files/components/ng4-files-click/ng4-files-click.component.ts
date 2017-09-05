@@ -49,6 +49,10 @@ export class Ng4FilesClickComponent implements OnInit, DoCheck {
   }
 
   public onChange(files: FileList): void {
+    if (!files.length) {
+        return;
+    }
+    
     this.filesSelect.emit(
       this.ng4FilesUtilsService.verifyFiles(files, this.configId)
     );
