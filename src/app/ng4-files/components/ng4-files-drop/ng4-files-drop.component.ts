@@ -27,17 +27,17 @@ export class Ng4FilesDropComponent implements DoCheck {
     @Output() filesSelect: EventEmitter<Ng4FilesSelected> = new EventEmitter<Ng4FilesSelected>();
 
     @HostListener('dragenter', ['$event'])
-    public onDragEnter(event: DragEvent) {
+    public onDragEnter(event: any) {
         this.preventEvent(event);
     }
 
     @HostListener('dragover', ['$event'])
-    public onDragOver(event: DragEvent) {
+    public onDragOver(event: any) {
         this.preventEvent(event);
     }
 
     @HostListener('drop', ['$event'])
-    public onDrop(event: DragEvent) {
+    public onDrop(event: any) {
         this.preventEvent(event);
 
         if (!event.dataTransfer || !event.dataTransfer.files) {
@@ -61,7 +61,7 @@ export class Ng4FilesDropComponent implements DoCheck {
         );
     }
 
-    private preventEvent(event: DragEvent): void {
+    private preventEvent(event: any): void {
         event.stopPropagation();
         event.preventDefault();
     }
