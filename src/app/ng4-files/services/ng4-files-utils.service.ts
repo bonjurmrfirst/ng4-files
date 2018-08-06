@@ -57,7 +57,7 @@ export class Ng4FilesUtilsService {
 
             const regexp = Ng4FilesUtilsService.getRegExp(extensionsList);
 
-            return !regexp.test(file.name);
+            return !regexp.test(file.name.toLowerCase()); // for case insensitive extension matching
         });
 
         if (filesNotMatchExtensions.length) {
