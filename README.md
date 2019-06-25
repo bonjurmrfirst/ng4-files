@@ -233,6 +233,6 @@ Don't: ```html
 ng4-files-click content is wrapped in label tag, so prefer something like
 ````html
 <ng4-files-click>
-    <span role="button" style="btn">Give me file ^.^</button>
+    <span role="button" style="btn">Give me file ^.^</span>
 </ng4-files-click>```
 ````
